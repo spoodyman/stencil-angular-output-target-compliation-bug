@@ -5,7 +5,8 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { TTestTypeWithError, TTestTypeWithoutError } from "./components/my-component/my-component";
+import { TTestTypeWithoutError } from "./types/test-without-error";
+import { TTestTypeWithError } from "./types/test-with-error";
 export namespace Components {
     interface MyComponent {
         /**

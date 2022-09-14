@@ -1,8 +1,7 @@
 import { Component, Prop, h, EventEmitter, Event } from '@stencil/core';
+import { TTestTypeWithError } from '../../types/test-with-error';
+import { TTestTypeWithoutError } from '../../types/test-without-error';
 import { format } from '../../utils/utils';
-
-export type TTestTypeWithError = 'primary' | 'secondary'
-export type TTestTypeWithoutError = 'primary' | 'secondary'
 
 @Component({
   tag: 'my-component',
