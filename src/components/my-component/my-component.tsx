@@ -1,7 +1,8 @@
 import { Component, Prop, h, EventEmitter, Event } from '@stencil/core';
 import { format } from '../../utils/utils';
 
-export type TTestType = 'primary' | 'secondary'
+export type TTestTypeWithError = 'primary' | 'secondary'
+export type TTestTypeWithoutError = 'primary' | 'secondary'
 
 @Component({
   tag: 'my-component',
@@ -24,7 +25,9 @@ export class MyComponent {
    */
   @Prop() last: string;
 
-  @Event() testEvent: EventEmitter<TTestType>
+  @Prop() testProp: TTestTypeWithoutError;
+
+  @Event() testEvent: EventEmitter<TTestTypeWithError>
 
   private getText(): string {
     return format(this.first, this.middle, this.last);

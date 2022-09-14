@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { TTestType } from "./components/my-component/my-component";
+import { TTestTypeWithError, TTestTypeWithoutError } from "./components/my-component/my-component";
 export namespace Components {
     interface MyComponent {
         /**
@@ -20,6 +20,7 @@ export namespace Components {
           * The middle name
          */
         "middle": string;
+        "testProp": TTestTypeWithoutError;
     }
 }
 export interface MyComponentCustomEvent<T> extends CustomEvent<T> {
@@ -51,7 +52,8 @@ declare namespace LocalJSX {
           * The middle name
          */
         "middle"?: string;
-        "onTestEvent"?: (event: MyComponentCustomEvent<TTestType>) => void;
+        "onTestEvent"?: (event: MyComponentCustomEvent<TTestTypeWithError>) => void;
+        "testProp"?: TTestTypeWithoutError;
     }
     interface IntrinsicElements {
         "my-component": MyComponent;
